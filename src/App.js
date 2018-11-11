@@ -24,13 +24,14 @@ class App extends Component {
   }
 
   changeResultTwo = () => {
-  const index = Math.floor(Math.random() * nameList.length);
-  nameList.splice(index,1)
-  if (nameList.length < 1) { alert('Every one has been called!'); }
-  this.setState({
-    pickName: nameList[index]
-  }) 
-  }
+    if (nameList.length < 1) { alert('Every one has been called!'); }
+    const index = Math.floor(Math.random() * nameList.length);
+    const lucky = nameList[index];
+    nameList.splice(index,1);
+    this.setState({
+      pickName: lucky
+    })
+    }
  
   render() {
     
